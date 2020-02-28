@@ -10,4 +10,11 @@ export const addTodo  = item => {
             completed: false,
         }
     }
-} 
+}
+
+export const toggleCompleted = id => {
+    return {
+        type: TOGGLE_COMPLETED,
+        payload: { id },
+    }
+}

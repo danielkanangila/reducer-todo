@@ -12,7 +12,7 @@ const TodoForm = props => {
     const handleSubmit = e => {
         e.preventDefault();
         const action = addTodo(task);
-        props.disparcher(action);
+        props.dispatcher(action);
         setTask('');
     }
 

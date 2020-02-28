@@ -1,16 +1,14 @@
 import React from 'react';
 import CheckBox from './../CheckBox';
-const Todo = props =>{
+import { toggleCompleted } from './../../actions'
 
-    const handleChange = e => {
-        props.toggleCompleted(props.todo.id)
-    } 
-
+const Todo = ({todo, dispatcher}) => {
+    
     return(
         <li className="tasks-item">
-            <CheckBox toggle={handleChange} value={props.todo.completed} />
-            <p className={props.todo.completed ? "tasks-text completed" : "tasks-text"}>
-                {props?.todo?.item}
+            <CheckBox toggle={() => dispatcher(toggleCompleted(todo.id))} value={todo.completed} />
+            <p className={todo.completed ? "tasks-text completed" : "tasks-text"}>
+                {todo?.item}
             </p>
         </li>
     )

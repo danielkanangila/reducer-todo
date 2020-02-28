@@ -5,13 +5,13 @@ import "./components/TodoComponents/Todo.css";
 import { reducer, initialState } from './reducers';
 
 const  App = () =>{
-  const [state, dsipatch] = useReducer(reducer, initialState);  
+  const [state, dispatch] = useReducer(reducer, initialState);  
   
   return (
     <div className="container">
       <h2>Welcome to your Todo App!</h2>
-      <TodoForm disparcher={dsipatch}  />
-      <TodoList clearCompleted={null} toggleCompleted={null} list={state.todos} />
+      <TodoForm dispatcher={dispatch}  />
+      <TodoList dispatcher={dispatch} list={state.todos} />
     </div>
   );
 }
