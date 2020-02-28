@@ -42,9 +42,9 @@ h1 {
 
 .menu {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    padding-bottom: 15px;
+    padding: 0 0px 15px 0px;
     border-bottom: 1px solid #cccccc;
     margin: 15px 0;
 }
@@ -68,7 +68,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding: 0px 15px;
+    padding: 0px 0px;
     margin-bottom: 15px;
     border-bottom: 1px solid #cccccc;
 }
@@ -100,12 +100,17 @@ h1 {
 }
 
 .btn-clear {
-    background-color: #b71c1c;
-    padding: 10px 16px;
+    background-color: #e53935;
+    padding: 9px 0px;
+    text-align: center;
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+    border-radius: 50%;
 }
 
 .btn-clear:hover {
-    background-color: #e53935;
+    background-color: #b71c1c;
 }
 
 /** CUSTOM CHECKBOX */

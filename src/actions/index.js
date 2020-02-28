@@ -1,6 +1,7 @@
 export const TOGGLE_COMPLETED = 'TOGGLE_COMPLETED';
 export const ADD_TODO = 'ADD_TODO';
 export const CLEAR_COMPLETED_TODO = 'CLEAR_COMPLETED_TODO';
+export const SELECT_TASK = 'SELECT_TASK';
 
 export const addTodo  = item => {
     return {
@@ -26,4 +27,8 @@ export const toggleCompleted = id => {
 
 export const clearCompletedTodos = () => {
     return { type: CLEAR_COMPLETED_TODO }
+}
+
+export const selectAllTask = status => {
+    return { type: SELECT_TASK, payload: {status} };
 }

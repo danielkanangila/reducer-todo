@@ -1,7 +1,8 @@
 import {
   ADD_TODO,
   TOGGLE_COMPLETED,
-  CLEAR_COMPLETED_TODO
+  CLEAR_COMPLETED_TODO,
+  SELECT_TASK
 } from '../actions';
 
 export const initialState = {
@@ -41,6 +42,17 @@ export const reducer = (state, action) => {
       return {
         ...state,
         todos: state.todos.filter(todo => todo.completed === false)
+      };
+    case SELECT_TASK: 
+      return {
+        ...state,
+        todos: state.todos.map(todo => {
+          return {
+            ...todo,
+            completed: action.payload.status,
+            completed_at: Date.now(),
+          }
+        })
       }
   }
 }
