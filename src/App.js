@@ -9,7 +9,7 @@ const  App = () =>{
   
   return (
     <div className="container">
-      <h2>Welcome to your Todo App!</h2>
+      <h1>Welcome to your Todo App!</h1>
       <TodoForm dispatcher={dispatch}  />
       <TodoList dispatcher={dispatch} list={state.todos} />
     </div>

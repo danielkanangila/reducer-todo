@@ -18,7 +18,10 @@ const TodoForm = props => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input className="text-field" type="text"  name="todo" placeholder="Todo" value={task} onChange={handleChange} />
+            <div className="text-field-wrapper">
+                <i class="fas fa-tasks tasks-icon"></i>
+                <input className="text-field" type="text"  name="todo" value={task} onChange={handleChange} />
+            </div>
             {/* <button type="submit">Add</button> */}
         </form>
     )

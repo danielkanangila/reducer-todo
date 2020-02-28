@@ -9,16 +9,18 @@ const Todo = ({todo, dispatcher}) => {
     }
     return(
         <li className="tasks-item">
-            <CheckBox toggle={() => dispatcher(toggleCompleted(todo.id))} value={todo.completed} />
-            <p className={todo.completed ? "tasks-text completed" : "tasks-text"}>
-                {todo?.item}
-            </p>
-            <p className="date">
+            <div className="task-box">
+                <CheckBox toggle={() => dispatcher(toggleCompleted(todo.id))} value={todo.completed} />
+                <p className={todo.completed ? "tasks-text completed" : "tasks-text"}>
+                    {todo?.item}
+                </p>
+            </div>
+            <div className="date">
                 <span className="date__created">Created: {getFormatedDate(todo.id)}</span>
                 {todo.completed && 
                     <span className="date__completed">Completed: {getFormatedDate(todo.completed_at)}</span>
                 }
-            </p>
+            </div>
         </li>
     )
 }
