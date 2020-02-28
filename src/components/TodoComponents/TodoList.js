@@ -11,7 +11,7 @@ const TodoList = props => {
                 <button onClick={e => dispatcher(
                     clearCompletedTodos()
                 )} className="btn btn-clear">
-                    CLEAR COMPLETED
+                    CLEAR
                 </button>
             </div>
             <ul className="tasks">

@@ -9,6 +9,7 @@ export const addTodo  = item => {
             id: Date.now(),
             item: item,
             completed: false,
+            completed_at: null,
         }
     }
 }
@@ -16,7 +17,10 @@ export const addTodo  = item => {
 export const toggleCompleted = id => {
     return {
         type: TOGGLE_COMPLETED,
-        payload: { id },
+        payload: { 
+            id,
+            completed_at: Date.now(),
+        },
     }
 }
 

@@ -9,6 +9,7 @@ export const initialState = {
       {
         item: 'Learn about reducers',
         completed: false,
+        completed_at: null,
         id: 3892987589
       }
     ]
@@ -29,7 +30,8 @@ export const reducer = (state, action) => {
           if (todo.id === action.payload.id) {
             return {
               ...todo,
-              completed: !todo.completed
+              completed: !todo.completed,
+              completed_at: action.payload.completed_at
             }
           }
           return todo;

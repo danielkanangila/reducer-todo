@@ -34,7 +34,7 @@ body {
 
 .menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding-bottom: 15px;
     border-bottom: 1px solid #cccccc;
@@ -60,11 +60,8 @@ body {
     align-items: center;
     width: 100%;
     padding: 0px 15px;
-    border-radius: 15px;
     margin-bottom: 15px;
-    border: 1px solid rgba(255,255,255,0.7);
-    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-                -6px -6px 10px -1px rgba(255,255,255,0.8);
+    border-bottom: 1px solid #cccccc;
 }
 .tasks-text {
     font-size: 1.3rem;
@@ -79,16 +76,19 @@ body {
 
 .btn {
     width: fit-content;
-    padding: 10px 16px;
     border-radius: 25px;
     text-transform: uppercase;
-    background-color: #424242;
     color: #ffffff;
     font-size: 0.9;
     border: 1px solid rgba(0,0,0,0.02);
     box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
                 -6px -6px 10px -1px rgba(255,255,255,0.7);
     transition: ease .3s;
+}
+
+.btn-clear {
+    background-color: red;
+    padding: 10px 16px;
 }
 
 .btn:hover {
