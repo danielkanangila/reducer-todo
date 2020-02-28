@@ -1,6 +1,7 @@
 import {
   ADD_TODO,
   TOGGLE_COMPLETED,
+  CLEAR_COMPLETED_TODO
 } from '../actions';
 
 export const initialState = {
@@ -20,7 +21,7 @@ export const reducer = (state, action) => {
       return {
         ...state,
         todos: [...state.todos, action.payload]
-      }
+      };
     case TOGGLE_COMPLETED:
       return {
         ...state,
@@ -33,6 +34,11 @@ export const reducer = (state, action) => {
           }
           return todo;
         })
+      };
+    case CLEAR_COMPLETED_TODO: 
+      return {
+        ...state,
+        todos: state.todos.filter(todo => todo.completed === false)
       }
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Todo from './Todo';
+import { clearCompletedTodos } from '../../actions'
 
 const TodoList = props => {
     const {list, dispatcher} = props;
@@ -7,7 +8,9 @@ const TodoList = props => {
     return (
         <div className="tasks-wrapper">
             <div className="menu">
-                <button onClick={e => e.preventDefault} className="btn btn-clear">
+                <button onClick={e => dispatcher(
+                    clearCompletedTodos()
+                )} className="btn btn-clear">
                     CLEAR COMPLETED
                 </button>
             </div>
