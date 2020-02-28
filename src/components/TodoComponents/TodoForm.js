@@ -1,37 +1,27 @@
-import React from 'react';
-import CheckBox from '../CheckBox';
+import React, { useState } from 'react';
+import { addTodo } from '../../actions';
 
-class TodoForm extends React.Component {
+const TodoForm = props => {
 
-    handleChange(e){
-        this.setState({todo: e.target.value});
-        if (this.props.isSearch) {
-            this.props.handleInput(e.target.value);
-        }
+    const [task, setTask] = useState('');
+
+    const handleChange = e => {
+        setTask(e.target.value);
     }
 
-    handleSubmit(e) {
+    const handleSubmit = e => {
         e.preventDefault();
-        if (this.state.todo) {
-            this.props.handleInput(this.state.todo);
-            this.setState({
-                todo: ''
-            })
-        }
+        const action = addTodo(task);
+        props.disparcher(action);
+        setTask('');
     }
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <input className="text-field" type="text"  name="todo" placeholder="Todo" value={this.state.todo} onChange={this.handleChange} />
-                {/* <button type="submit">Add</button> */}
-                <div className="search-box">
-                    <CheckBox toggle={this.props.toggleSearch} value={this.props.isSearch} />
-                    Search
-                </div>
-            </form>
-        )
-    }
+    return (
+        <form onSubmit={handleSubmit}>
+            <input className="text-field" type="text"  name="todo" placeholder="Todo" value={task} onChange={handleChange} />
+            {/* <button type="submit">Add</button> */}
+        </form>
+    )
 }
 
 export default TodoForm;
